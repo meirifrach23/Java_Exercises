@@ -1,10 +1,10 @@
 package Tattoo_Removal;
-import Tattoo_Removal.RoboticTattooRemoval;
+
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 import java.io.File;
-import static Tattoo_Removal.TextFilesClass.copy2DArrayIntoFile;
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertTrue;
 
 public class RoboticTattooRemovalTest {
 
@@ -25,7 +25,7 @@ public class RoboticTattooRemovalTest {
                         {" ", "X", " ", " ", " ", " ", " ", " ", " ", "X", " "},
                         {" ", "X", " ", " ", " ", " ", " ", " ", " ", "X", " "},
                         {" ", " ", "X", " ", " ", " ", " ", " ", "X", " ", " "},
-                        {" ", " ", " ", "X", " ", " ", " ", "X", " ", " ", " "},
+                        {" ", " ", " ", "X", " ", " ", " ", "x", " ", " ", " "},
                         {" ", " ", " ", " ", "X", " ", "X", " ", " ", " ", " "},
                         {" ", " ", " ", " ", " ", "X", " ", " ", " ", " ", " "},
                         {" ", " ", " ", " ", " ", "X", " ", " ", " ", " ", " "},
@@ -54,6 +54,6 @@ public class RoboticTattooRemovalTest {
 
         File referenceFileObject = new File(referenceFile);
         File FileAfterReplaceCharsObject = new File(fileAfterReplacing);
-        FileUtils.contentEquals(referenceFileObject, FileAfterReplaceCharsObject);
+        assertTrue(FileUtils.contentEquals(referenceFileObject, FileAfterReplaceCharsObject));
     }
 }
